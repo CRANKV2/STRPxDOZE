@@ -17,8 +17,7 @@
 ## Termux Command For Doze
 `su -c DOZE`
 
-## Termux Command for GMs
-SChecker
+## Termux Command for GMS Checker
 `su -c STRPC`
 
 ## Stability Assurance:
