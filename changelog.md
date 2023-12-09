@@ -67,3 +67,110 @@
 *Enjoy the enhanced features and improved stability with STRP x DOZE v2.2!*
 
 If you have any questions or encounter issues, feel free to reach out.
+------
+# v2.0 Stable Build
+Changelog:
+------
+Version v2.0 - Date 2023-08-09
+------
+- Updated the main banner in the script menu to improve visual appeal.
+- Fixed various issues in the script code to enhance functionality and stability.
+- Added new configurable values to provide more customization options.
+- Significantly improved the overall performance and execution speed of the script.
+- Changed the default location of the log file to: /data/adb/modules/STRPxDOZE/strpxdoze.log.
+- Introduced additional placebo changelogs to keep users entertained while reading.
+- Streamlined user prompts and choices for a smoother interaction.
+- Enhanced error handling to provide clearer messages in case of unexpected scenarios.
+- Adjusted formatting and layout for better readability.
+- Updated documentation to reflect the latest changes and usage instructions.
+------
+Your feedback and suggestions are highly appreciated. Feel free to reach out if you encounter any issues or have ideas for further improvements.
+-------
+# v1.8 (180)
+- Supporting now Android 13
+- Completly Reworked Script
+- Reworked .log (/sdcard/#STRP/strpxdoze.log)
+- SDK check before script execute (min. SDK > 26 | Android 8 Oreo)
+-> ADDED
+- Patching GMS </> IMS - XML files..
+- Moving, rename and remove files, then replace them with Modified .xml ones..
+- Disabling collective device administrators
+- Removing GMS Process from Battery Optimization Whitelist
+- Reduce screen timeout duration (can be changed at anytime in settings Manually)
+- Turning off vibrate on touching (can be changed at anytime in settings Manually)
+- Closing all apps in Background where not in use
+- Disabling location services when not in use
+- STRP exclusive Google Services Battery Drain Fix
+- Disabling GMS, IMS and some other Battery Fuckers running on Device Startup
+-> ADDED (YES/NO) CHOICES
+- Auto Add GMS Into Battery Using Restricted List ?
+- Fix Notification Delay Automatically ?
+- Clean Play Cache Too ?
+- Enable Adaptive Battery ?
+- Run STRP GMS Doze Checker End of script if needed ?
+-----
+# v1.7 (170)
+- Removed Collective Device Administrators
+- Removed gms from whitelist
+- Added scissor and Gl Preload thanks to @Saitama
+- Removed several values causing notifications issues
+- Whitelisted Broadcast Receiver and some others
+- If incoming messages still delays then you can use this manual fix
+- ( i have already added it inside doze code but just in case here the fix)
+- Command-line for fix delayed incoming messages issue:
+- Code:
+> su
+> cd /data/data
+> find . -type f -name '*gms*' -delete
+> Hit enter and wuala.. The Problem is Fixed
+------
+# v1.6 (160)
+- Reworked Values
+- Added Abbility to enable & disable manually
+- Termux Commands ...
+- Enable = su -c dozeon
+- Disable = su -c dozeoff
+- Adjusted main script
+- fixed navigation & google play issue
+-----
+# v1.5 (150)
+- Added various analytics to disable
+- Added new ultimate doze values to squash many abttery out of GMS as possible
+- Will now Loop all of them trough every 'user' on device
+- reworked script
+- fixed many bugs incl. location, maps and more
+- huge improvment made to reduce much battery consumption as possible
+- various code bugs fixed and merged
+-------
+# v1.4 (140)
+- Added chimera
+- fixed GMS problem from v1.3 (sorry for that lmao)
+- fixed gmail, chrome, playstore and other stuff
+- removed doze tester, no more needed
+- minor bug fixes and Improvments 
+------
+# v1.3 (130)
+- Added Many doze option to get maximum out of Battery Drain while in Daily using
+- script run auto after 45 sec. after boot
+- huge Improvments made for best battery backup
+- fixed gms issue
+- minor bug fixes and Improvments
+-------
+# v1.2 (120)
+- Added new doze values .. many of them..
+- Script auto Loads after boot wait 30-40 sec to apply itself.
+- u can see now what getting Dozed when run Script manual 
+- su -c dailygms 
+- don't scare about many process, all that get doze'd 
+- minor changes, bug fixes and Improvments made.
+------
+# v1.1 (110)
+- Fixed Gmail issue
+- added some facebook and other useless sozial media drainer
+- Initializing now 40 sec. after boot
+------
+# v1.0 ( 100 ) Initial Release
+- Script will AUTO execute after boot!
+- You can check with STRP checker if it's Successfully Applied!
+- just use su -c STRPC to start checker..
+------
