@@ -20,6 +20,12 @@
 ## Termux Command for GMS Checker
 `su -c STRPC`
 
+------
+## Make sure Flashing latest SQLite3 from `STRP`
+[Download SQLite3 Here]()
+
+
+------
 ## Stability Assurance:
 - Rest assured, this module has been crafted with meticulous care to ensure it will never cause `bootloops`. Your device's `safety` is our `top priority`.
 
