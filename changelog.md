@@ -1,3 +1,27 @@
+# STRPxDOZE Module v2.3 Update Changelog
+
+- **Binary Transfer:** 
+  - Added automatic transfer of jq and curl binaries to /system/bin during module updates. This ensures their availability for the new update checker and will be a standard practice for all future updates.
+
+- **Convenient Update Command:** 
+  - Introduced `su -c strp-update` command for users to easily update the module to the latest version.
+
+- **Enhanced Update Checker:** 
+  - The updated module features an advanced update checker that notifies users on every reboot. It indicates whether the current module version matches the latest version or if a new version is available.
+
+- **Latestart Service Improvements:**
+  - Optimized latestart service in service.sh for smoother execution.
+  - Modified appops set commands to allow the script to continue even if certain lines fail.
+
+- **Logging Enhancements:**
+  - Improved logging format for doze mode and latestart service.
+
+- **Miscellaneous Improvements:** Various enhancements have been made to improve overall functionality and user experience.
+
+Thank you for being a valuable part of STRP x UNIVERSE!
+
+------
+
 # STRP x DOZE Changelog
 
 ## Version 2.2 (Release Date: 2023-12-10)
