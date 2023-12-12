@@ -4,7 +4,7 @@
   - Added automatic transfer of jq and curl binaries to /system/bin during module updates. This ensures their availability for the new update checker and will be a standard practice for all future updates.
 
 - **Convenient Update Command:** 
-  - Introduced `su -c strp-update` command for users to easily update the module to the latest version.
+  - Introduced `su -c strp-update-doze` command for users to easily update the module to the latest version.
 
 - **Enhanced Update Checker:** 
   - The updated module features an advanced update checker that notifies users on every reboot. It indicates whether the current module version matches the latest version or if a new version is available.
