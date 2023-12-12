@@ -17,8 +17,17 @@ wait_until_login() {
 
 wait_until_login
 
+
+
+
 # Log Location
-LOG="/data/adb/modules/STRPxDOZE/strpxdoze-latestart.log"
+LOG="/data/adb/modules/STRPxDOZE/Doze-latestart.log"
+
+# Function to log message with timestamp
+log_message() {
+    local timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    echo "[$timestamp] $1" >> "$LOG"
+}
 
 # If log exists, remove it
 [[ -e "$LOG" ]] && rm "$LOG"
@@ -33,25 +42,33 @@ else
 fi
 
 # Logging Success
-echo "" >> "$LOG"
-echo "▌▰▰ Initialize STRP x DOZE Late Start Service..." >> "$LOG"
-echo "" >> "$LOG"
-
+log_message "▌▰▰ Initialize STRP x DOZE Late Start Service..."
 # Thanks to Gloeyisk & CrazyBytesVE for Partial Stuffs in here.
 
-sleep 25
+sleep 10
+log_message ""
+# Log the result of each appops command
+log_message "Setting appops for com.google.android.gms..."
+cmd appops set com.google.android.gms RUN_ANY_IN_BACKGROUND ignore || true
+cmd appops set com.google.android.gms RUN_ANY_IN_BACKGROUND ignore || true
+cmd appops set com.google.android.gms.location.history RUN_ANY_IN_BACKGROUND ignore || true
+cmd appops set com.google.android.gm RUN_ANY_IN_BACKGROUND ignore || true
 
-cmd appops set com.google.android.gms RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.google.android.ims RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.google.android.gms RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.google.android.ims RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.google.android.gms.location.history RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.google.android.gm RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.xiaomi.finddevice RUN_ANY_IN_BACKGROUND ignore
-cmd appops set com.miui.analytics RUN_ANY_IN_BACKGROUND ignore
+log_message "Setting appops for com.google.android.ims..."
+cmd appops set com.google.android.ims RUN_ANY_IN_BACKGROUND ignore || true
+cmd appops set com.google.android.ims RUN_ANY_IN_BACKGROUND ignore || true
 
-echo "$(date)" >> "$LOG"
-echo "▰ Late Start Service Run With Success!" >> "$LOG"
-echo "" >> "$LOG"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" >> "$LOG"
-echo "" >> "$LOG"
+log_message "Setting appops for com.xiaomi.finddevice..."
+cmd appops set com.xiaomi.finddevice RUN_ANY_IN_BACKGROUND ignore || true
+
+log_message "Setting appops for com.miui.analytics..."
+cmd appops set com.miui.analytics RUN_ANY_IN_BACKGROUND ignore || true
+log_message ""
+# Log the result of the update_checker
+log_message "Running update_checker..."
+update_checker_doze
+log_message "Successfully executed Update Checker ( Check you're Notifications! )"
+log_message ""
+# Log the success of Late Start Service
+log_message "Late Start Service Run With Success!"
+log_message "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

@@ -58,7 +58,7 @@ ui_print ""
   ui_print "▌UNIVERSAL ▌"
   ui_print " "
   sleep 1
-  ui_print "▌VERSION ▰ 2.2"
+  ui_print "▌VERSION ▰ 2.3"
   ui_print "▌CODENAME ▰ GMSKiller"
   ui_print "▌DEVICE INFORMATIONS..:"
   sleep 2
@@ -127,7 +127,25 @@ else
     ui_print "curl binary transferred successfully!"
     chmod 755 "$destination_curl"
   else
-    ui_print "Error: Failed to transfer curl binary, please check the source file."
+    ui_print "Error: Failed to transfer curl binary, please contact Developer"
+  fi
+fi
+
+if [ -f "/system/bin/jq" ]; then
+  ui_print "jq binary already present in /system/bin."
+else
+  ui_print "jq binary not found in /system/bin, transferring..."
+
+  source_curl="/data/adb/modules_update/STRPxDOZE/STRP/jq"
+  destination_curl="/system/bin/jq"
+  
+  cp "$source_jq" "$destination_jq"
+
+  if [ $? -eq 0 ]; then
+    ui_print "jq binary transferred successfully!"
+    chmod 755 "$destination_jq"
+  else
+    ui_print "Error: Failed to transfer jq binary, please contact Developer"
   fi
 fi
 
@@ -154,11 +172,6 @@ if [ $? -eq 0 ]; then
 else
   ui_print "Error: Failed to download the script, please try again or check your connection!"
 fi
-
-# Delete the STRP folder
-ui_print "Deleting the STRP folder..."
-rm -rf $MODPATH/STRP
-ui_print "STRP folder deleted."
 	ui_print ""
 	ui_print "▌Installing STRP x DOZE ▌"
   ui_print ""
@@ -171,15 +184,21 @@ ui_print "STRP folder deleted."
   ui_print "▌DONE ▌"
   ui_print ""
   sleep 1
-  ui_print "▌Run Script Manually By Using su -c DOZE"
+  ui_print "▌Run Script Manually By Using "
+  ui_print "▌▰ su -c DOZE"
   ui_print ""
-  sleep 2
+  ui_print ""
+    sleep 2
   ui_print "▌Termux Command For STRP GMS Checker.."
-  ui_print ""
-  sleep 1.5
   ui_print "▌▰ su -c STRPC"
   ui_print ""
-  sleep 1
+  ui_print ""
+    sleep 2
+  ui_print "▌If Module has an Update use this command to Update.."
+  ui_print "▌▰ su -c strp-update-doze"
+  ui_print ""
+  ui_print ""
+    sleep 1.5
     ui_print "Checking for old logs..."
     sleep 1.5
 # Check and remove old logs if present in DATA path
