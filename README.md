@@ -15,13 +15,13 @@
 - Android 10.0+
 
 ## Termux Command For Doze
-`su -c DOZE`
+- `su -c DOZE`
 
 ## Termux Command for GMS Checker
-`su -c STRPC`
+- `su -c STRPC`
 
 ## Termux command to Update Module
-`su -c strp-update-doze`
+- `su -c strp-update-doze`
 ------
 ## Make sure Flashing latest SQLite3 from `STRP`
 [Download SQLite3 Here](https://www.strp.blog/2023/09/strp-x-sql.html?m=1)
