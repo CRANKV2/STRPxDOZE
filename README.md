@@ -20,9 +20,11 @@
 ## Termux Command for GMS Checker
 `su -c STRPC`
 
+## Termux command to Update Module
+`su -c strp-update-doze`
 ------
 ## Make sure Flashing latest SQLite3 from `STRP`
-[Download SQLite3 Here]()
+[Download SQLite3 Here](https://www.strp.blog/2023/09/strp-x-sql.html?m=1)
 
 
 ------
